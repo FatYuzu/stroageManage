@@ -36,13 +36,14 @@ import {
   Image,
   Progress,
   Upload,
-  Calendar
+  Calendar,
+  Tree,
 } from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 import "./assets/less/index.less";
 
 import store from "./store";
-import router from "../rounter";
+import router from "./rounter";
 import http from "axios";
 import "../api/mock.js";
 
@@ -78,9 +79,10 @@ Vue.use(Option);
 Vue.use(Dialog);
 Vue.use(Pagination);
 Vue.use(Image);
-Vue.use(Progress)
-Vue.use(Upload)
-Vue.use(Calendar)
+Vue.use(Progress);
+Vue.use(Upload);
+Vue.use(Calendar);
+Vue.use(Tree);
 
 Vue.prototype.$http = http;
 Vue.prototype.$confirm = MessageBox.confirm;
@@ -95,9 +97,9 @@ router.beforeEach((to, from, next) => {
   if (!token && to.name !== "login") {
     next({ name: "login" });
   } //如果token存在且要去的页面是登录页
-  else if(token&&to.name==="login"){
-    next({name:"home"})
-  } else{
+  else if (token && to.name === "login") {
+    next({ name: "home" });
+  } else {
     next();
   }
 });
@@ -107,7 +109,7 @@ new Vue({
   router,
   render: (h) => h(App),
   //解决登录后刷新却白屏的问题
-  created(){
-    store.commit('addMenu',router)
-  }
+  created() {
+    store.commit("addMenu", router);
+  },
 }).$mount("#app");

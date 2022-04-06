@@ -55,15 +55,16 @@ export default{
             state.menu =menu
             const menuArray=[]
             //↓给menuArray存入路由的相关数据
+            console.log("sssss");
             menu.forEach(item => {
                 if(item.children){
                     item.children=item.children.map(item =>{
-                        item.component=()=>import(`../../views/${item.url}`)
+                        item.component=()=>import(`../views/${item.url}`)
                         return item
                     })
                     menuArray.push(...item.children)
                 }else{
-                    item.component=()=>import(`../../views/${item.url}`)
+                    item.component=()=>import(`../views/${item.url}`)
                     menuArray.push(item)
                 }
             });

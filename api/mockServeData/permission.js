@@ -42,22 +42,22 @@ export default {
             {
               label: '其他',
               icon: 'location',
-              children: [
-                {
-                  path: '/page1',
-                  name: 'page1',
-                  label: '页面1',
-                  icon: 'setting',
-                  url: 'other/pageOne.vue'
-                },
-                {
-                  path: '/page2',
-                  name: 'page2',
-                  label: '页面2',
-                  icon: 'setting',
-                  url: 'other/pageTwo.vue'
-                }
-              ]
+              // children: [
+              //   {
+              //     path: '/page1',
+              //     name: 'page1',
+              //     label: '页面1',
+              //     icon: 'setting',
+              //     url: 'other/pageOne.vue'
+              //   },
+              //   {
+              //     path: '/page2',
+              //     name: 'page2',
+              //     label: '页面2',
+              //     icon: 'setting',
+              //     url: 'other/pageTwo.vue'
+              //   }
+              // ]
             }
           ],
           token: Mock.Random.guid(),
